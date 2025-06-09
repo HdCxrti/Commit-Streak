@@ -2,8 +2,8 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: '0 16 * * *'  # Runs every day at 4PM UTC (Noon Eastern)
-  workflow_dispatch:       # Lets you manually run it from the Actions tab
+    - cron: '0 16 * * *'
+  workflow_dispatch:
 
 jobs:
   commit:
@@ -12,9 +12,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Make empty commit
+      - name: Make empty commit and push
         run: |
           git config user.name "HdCrxti"
           git config user.email "jacobdaviddutra@gmail.com"
           git commit --allow-empty -m "Daily commit"
-          git push
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
