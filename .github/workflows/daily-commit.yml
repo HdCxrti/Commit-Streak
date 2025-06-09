@@ -2,11 +2,11 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: '0 16 * * *'  # 12 PM ET
-    - cron: '0 18 * * *'  # 2 PM ET
-    - cron: '0 20 * * *'  # 4 PM ET
-    - cron: '0 22 * * *'  # 6 PM ET
-    - cron: '0 0 * * *'   # 8 PM ET
+    - cron: "0 16 * * *" # 12 PM ET
+    - cron: "0 18 * * *" # 2 PM ET
+    - cron: "0 20 * * *" # 4 PM ET
+    - cron: "0 22 * * *" # 6 PM ET
+    - cron: "0 0 * * *" # 8 PM ET
   workflow_dispatch:
 
 permissions:
