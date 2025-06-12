@@ -2,11 +2,11 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: "0 16 * * *" # 12 PM ET
-    - cron: "0 18 * * *" # 2 PM ET
-    - cron: "0 20 * * *" # 4 PM ET
-    - cron: "0 22 * * *" # 6 PM ET
-    - cron: "0 0 * * *" # 8 PM ET
+    - cron: "0 16 * * *"   # 12 PM ET
+    - cron: "0 18 * * *"   # 2 PM ET
+    - cron: "0 20 * * *"   # 4 PM ET
+    - cron: "0 22 * * *"   # 6 PM ET
+    - cron: "0 0 * * *"    # 8 PM ET
   workflow_dispatch:
 
 permissions:
@@ -16,14 +16,12 @@ jobs:
   commit:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Make empty commit and push
         run: |
-          git config user.name "HdCrxti"
-          git config user.email "jacobdaviddutra@gmail.com"
+          git config user.name "HdCxrti"
+          git config user.email "hdcxrti@gmail.com"
           git commit --allow-empty -m "Daily commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
+          git push https://x-access-token:${{ secrets.PAT_DAILY_COMMIT }}@github.com/${{ github.repository }} HEAD:main
