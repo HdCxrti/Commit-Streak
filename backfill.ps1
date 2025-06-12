@@ -1,4 +1,4 @@
-$dates = @("2024-06-10", "2024-06-11")
+$dates = @("2025-06-10", "2025-06-11")
 
 foreach ($date in $dates) {
     $env:GIT_AUTHOR_DATE = "$date 12:00:00"
